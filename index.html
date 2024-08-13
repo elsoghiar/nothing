@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App 9000</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- الصفحة الرئيسية -->
+        <div id="mainPage" class="screen-content active">
+            <div class="status-bar">
+                <div class="balance">
+                    <div id="balanceTitle">Balance:</div>
+                    <div id="balanceAmount">0</div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="clickable-image" id="clickableImage" onclick="handleClick(); applyJellyEffect('clickableImage')">
+                    <img src="https://i.ibb.co/RctkGFF/Picsart-24-08-08-10-24-13-339.png" alt="Clickable Image">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-inner" id="energyBar"></div>
+                </div>
+                <div id="energy-info">10000/10000</div>
+            </div>
+            <div class="menu">
+                <button onclick="showPage('accountPage')">Account</button>
+                <button onclick="showPage('playPage')">Play</button>
+                <button onclick="showWalletPage()">Wallet</button>
+            </div>
+        </div>
+
+        <!-- صفحة الحساب -->
+        <div id="accountPage" class="screen-content">
+            <div class="top-bar">
+                <button class="back-button" onclick="showPage('mainPage')">&#8592; Back</button>
+                <button class="settings-button" onclick="toggleSettings()">&#9881; Settings</button>
+            </div>
+            <div class="user-info">
+                <div class="profile-pic" id="defaultProfilePic"></div>
+                <div class="user-id">User 8870</div>
+            </div>
+            <div class="invite-section">
+                <button class="invite-more" onclick="generateInviteLink()">Invite Friends</button>
+                <div id="inviteLinkContainer" style="display:none;">
+                    <input type="text" id="inviteLink" readonly onclick="copyInviteLink()">
+                </div>
+            </div>
+        </div>
+
+        <!-- صفحة اللعب -->
+        <div id="playPage" class="screen-content">
+            <div class="top-bar">
+                <button class="back-button" onclick="showPage('mainPage')">&#8592; Back</button>
+            </div>
+            <div class="user-info">
+                <h2>Play Section</h2>
+                <p>Coming Soon! Stay Tuned.</p>
+            </div>
+        </div>
+
+        <!-- صفحة المحفظة -->
+        <div id="walletPage" class="screen-content">
+            <div class="top-bar">
+                <button class="back-button" onclick="showPage('mainPage')">&#8592; Back</button>
+            </div>
+            <div class="user-info">
+                <h2>Wallet</h2>
+                <p>Coming Soon! Stay Tuned.</p>
+            </div>
+        </div>
+
+        <!-- إشعار النسخ -->
+        <div id="copyNotification" class="copy-notification">Invite link copied!</div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
